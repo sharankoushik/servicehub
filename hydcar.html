@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ServiceHub - Carpenters in Hyderabad</title>
-    <link rel="icon" type="image/png" href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+    <title>ServiceHub - Carpentry Services Hyderabad</title>
+
+    <link rel="icon" type="image/png"
+        href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
 
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,1050 +20,1114 @@
 
         body {
             min-height: 100vh;
-            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            color: white;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.82)),
+                url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white;
         }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.65);
-            z-index: -1;
-        }
-
-        /* HEADER */
 
         header {
-            background: rgba(17,24,39,0.97);
-            padding: 20px 7%;
+            height: 70px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid rgba(255, 193, 7, 0.25);
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 1000;
         }
 
-        header h1 {
-            color: #fbbf24;
-            font-size: 30px;
+        .logo {
+            color: #ffc107;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        header p {
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
             font-size: 15px;
+            transition: 0.3s;
         }
 
-        /* HERO */
+        nav a:hover {
+            color: #ffc107;
+        }
 
         .hero {
             text-align: center;
-            padding: 50px 20px 35px;
+            padding: 65px 20px 40px;
         }
 
-        .hero h2 {
-            font-size: 38px;
-            margin-bottom: 12px;
+        .hero h1 {
+            font-size: 42px;
+            color: #ffc107;
+            margin-bottom: 15px;
         }
 
         .hero p {
-            color: #d1d5db;
-            font-size: 17px;
+            font-size: 18px;
+            color: #ddd;
         }
 
-        /* LOCATION */
-
-        .location {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-            background: rgba(255,255,255,0.96);
-            color: #222;
-            padding: 17px 25px;
-            border-radius: 10px;
-            margin-bottom: 30px;
+        .location-bar {
+            width: 86%;
+            margin: 10px auto 35px;
+            padding: 18px 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 193, 7, 0.35);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            backdrop-filter: blur(8px);
         }
 
-        .location strong {
-            color: #2563eb;
+        .location-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        /* PROVIDER GRID */
+        .location-icon {
+            font-size: 25px;
+        }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
+        .location-text strong {
+            color: #ffc107;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .provider-count {
+            color: #aaa;
+            font-size: 14px;
         }
 
         .providers {
+            width: 86%;
+            margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding-bottom: 60px;
         }
 
-        /* CARD */
-
         .card {
-            background: rgba(255,255,255,0.97);
-            color: #222;
-            padding: 23px;
-            border-radius: 14px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: rgba(20, 20, 20, 0.92);
+            border: 1px solid rgba(255, 193, 7, 0.25);
+            border-radius: 15px;
+            padding: 25px;
             transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.4);
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            border-color: #ffc107;
+            box-shadow: 0 15px 30px rgba(255, 193, 7, 0.12);
         }
 
         .avatar {
-            width: 60px;
-            height: 60px;
-            background: #fbbf24;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
+            background: #ffc107;
+            color: #111;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-        }
-
-        .profile h3 {
-            font-size: 19px;
-            margin-bottom: 5px;
-        }
-
-        .verified {
-            color: #16a34a;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .details {
-            line-height: 1.8;
-            color: #555;
+            font-size: 29px;
             margin-bottom: 15px;
         }
 
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .service {
+            color: #ffc107;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .area {
+            color: #bbb;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
         .rating {
-            color: #f59e0b;
-            font-weight: bold;
+            margin-bottom: 18px;
+            color: #ffd54f;
+            font-size: 14px;
         }
 
-        .price {
-            color: #111827;
-            font-weight: bold;
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
-        /* BOOK BUTTON */
-
-        .book-btn {
-            width: 100%;
-            padding: 12px;
+        button,
+        .btn {
             border: none;
             border-radius: 8px;
-            background: #2563eb;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
+            padding: 11px 8px;
+            font-size: 14px;
             cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .book-btn:hover {
-            background: #1d4ed8;
-        }
-
-        .booked {
-            background: #16a34a !important;
-        }
-
-        /* SUCCESS */
-
-        .success-message {
-            display: none;
-            background: #dcfce7;
-            color: #15803d;
-            padding: 12px;
-            margin-top: 12px;
-            border-radius: 7px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        /* BACK */
-
-        .back {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .back a {
-            display: inline-block;
-            background: #fbbf24;
-            color: #111827;
-            padding: 12px 28px;
-            border-radius: 8px;
             text-decoration: none;
+            text-align: center;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        .back a:hover {
-            background: #f59e0b;
+        .call {
+            background: #2196f3;
+            color: white;
         }
 
-        /* FOOTER */
+        .call:hover {
+            background: #1976d2;
+        }
+
+        .whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .whatsapp:hover {
+            background: #1ebe5d;
+        }
+
+        .book {
+            grid-column: 1 / -1;
+            background: #ffc107;
+            color: #111;
+        }
+
+        .book:hover {
+            background: #ffca28;
+        }
+
+        .disabled {
+            background: #555 !important;
+            color: #ccc !important;
+            cursor: not-allowed !important;
+        }
+
+        .success {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            background: #1b5e20;
+            color: white;
+            padding: 16px 22px;
+            border-radius: 10px;
+            display: none;
+            z-index: 2000;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1500;
+            padding: 20px;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 500px;
+            background: #151515;
+            border: 1px solid #ffc107;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content h2 {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: #bbb;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .modal-buttons {
+            display: grid;
+            gap: 12px;
+        }
+
+        .modal-buttons button {
+            width: 100%;
+            padding: 13px;
+        }
+
+        .current-location {
+            background: #ffc107;
+            color: #111;
+        }
+
+        .share {
+            background: #673ab7;
+            color: white;
+        }
+
+        .share-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .copy {
+            background: #424242;
+            color: white;
+        }
+
+        .maps {
+            background: #e53935;
+            color: white;
+        }
+
+        .close {
+            background: #222;
+            color: white;
+            border: 1px solid #555;
+        }
 
         footer {
-            background: rgba(17,24,39,0.97);
             text-align: center;
             padding: 25px;
-            color: #d1d5db;
-            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #888;
+            border-top: 1px solid rgba(255, 193, 7, 0.2);
         }
 
-        footer a {
-            color: #fbbf24;
-            text-decoration: none;
+        footer span {
+            color: #ffc107;
         }
 
-        /* MOBILE */
+        @media (max-width: 1000px) {
+            .providers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-        @media(max-width:600px) {
+        @media (max-width: 650px) {
 
             header {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
+                padding: 0 20px;
             }
 
-            header h1 {
-                font-size: 25px;
+            nav {
+                display: none;
             }
 
-            .hero h2 {
+            .hero h1 {
                 font-size: 30px;
             }
 
+            .hero p {
+                font-size: 15px;
+            }
+
+            .location-bar {
+                width: 92%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .providers {
+                width: 92%;
+                grid-template-columns: 1fr;
+            }
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- HEADER -->
-
     <header>
+        <div class="logo">SERVICEHUB</div>
 
-        <h1>⚡ SERVICEHUB</h1>
-
-        <p>All Home Services At One Stop</p>
-
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="login.html">Login</a>
+        </nav>
     </header>
 
 
-    <!-- HERO -->
-
     <section class="hero">
 
-        <h2>🪚 Carpenters in Hyderabad</h2>
+        <h1>🪚 Carpentry Services in Hyderabad</h1>
 
         <p>
-            Find trusted carpenters near your location
+            Find carpenters and professional carpentry service providers
+            for furniture, doors, cupboards, repairs and woodwork.
         </p>
 
     </section>
 
 
-    <!-- LOCATION -->
+    <div class="location-bar">
 
-    <div class="location">
+        <div class="location-info">
 
-        📍 Location:
-        <strong>Hyderabad, Telangana</strong>
+            <div class="location-icon">📍</div>
 
-        &nbsp; | &nbsp;
+            <div class="location-text">
+                <strong>Hyderabad, Telangana</strong>
+                <span>Carpentry & Woodwork Services</span>
+            </div>
 
-        🪚 Service:
-        <strong>Carpentry</strong>
+        </div>
+
+        <div class="provider-count">
+            30 service listings
+        </div>
 
     </div>
 
 
-    <!-- PROVIDERS -->
-
-    <main class="container">
-
-        <div class="providers">
+    <section class="providers" id="providers"></section>
 
 
-            <!-- 1 -->
+    <div class="success" id="successMessage">
+        ✅ Booking request started!
+    </div>
 
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Ravi Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
 
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Kukatpally<br>
-                    💰 <span class="price">₹400 onwards</span>
-                </div>
+    <!-- LOCATION MODAL -->
 
-                <button class="book-btn" onclick="book(this)">
-                    Book Now
+    <div class="modal" id="locationModal">
+
+        <div class="modal-content">
+
+            <h2>📍 Share Your Location</h2>
+
+            <p id="selectedProviderText">
+                Share your location with the selected carpentry service provider.
+            </p>
+
+            <div class="modal-buttons">
+
+                <button class="current-location"
+                    onclick="getCurrentLocation()">
+                    📍 Get Current Location
                 </button>
-                <div class="success-message">
-                    ✅ Successfully Booked!
-                </div>
-            </div>
 
-
-            <!-- 2 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Suresh Reddy</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Madhapur<br>
-                    💰 <span class="price">₹450 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">
-                    Book Now
+                <button class="share"
+                    onclick="shareLocation()">
+                    📤 Share Location
                 </button>
-                <div class="success-message">✅ Successfully Booked!</div>
+
+                <button class="share-whatsapp"
+                    onclick="shareWhatsAppLocation()">
+                    💬 Share on WhatsApp
+                </button>
+
+                <button class="copy"
+                    onclick="copyLocation()">
+                    📋 Copy Location Link
+                </button>
+
+                <button class="maps"
+                    onclick="openGoogleMaps()">
+                    🗺️ Open Google Maps
+                </button>
+
+                <button class="close"
+                    onclick="closeModal()">
+                    Close
+                </button>
+
             </div>
-
-
-            <!-- 3 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Mahesh Rao</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Gachibowli<br>
-                    💰 <span class="price">₹500 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 4 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Arjun Singh</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 Banjara Hills<br>
-                    💰 <span class="price">₹550 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 5 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Vijay Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Ameerpet<br>
-                    💰 <span class="price">₹350 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 6 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Ramesh Naidu</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 10 Years Experience<br>
-                    📍 Kondapur<br>
-                    💰 <span class="price">₹600 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 7 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Prakash Rao</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Miyapur<br>
-                    💰 <span class="price">₹400 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 8 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Kiran Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Secunderabad<br>
-                    💰 <span class="price">₹450 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 9 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Naresh Yadav</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Manikonda<br>
-                    💰 <span class="price">₹380 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 10 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Rohit Sharma</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 11 Years Experience<br>
-                    📍 Jubilee Hills<br>
-                    💰 <span class="price">₹650 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 11 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Manoj Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Begumpet<br>
-                    💰 <span class="price">₹420 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 12 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Raju Singh</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 LB Nagar<br>
-                    💰 <span class="price">₹480 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 13 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Srikanth Reddy</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Dilsukhnagar<br>
-                    💰 <span class="price">₹400 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 14 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Ganesh Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 12 Years Experience<br>
-                    📍 Himayatnagar<br>
-                    💰 <span class="price">₹700 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 15 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Ajay Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Tarnaka<br>
-                    💰 <span class="price">₹380 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 16 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Venu Gopal</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Alwal<br>
-                    💰 <span class="price">₹450 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 17 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Hari Prasad</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Uppal<br>
-                    💰 <span class="price">₹420 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 18 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Ravi Teja</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 Nallagandla<br>
-                    💰 <span class="price">₹500 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 19 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Chandra Sekhar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Tolichowki<br>
-                    💰 <span class="price">₹390 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 20 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Imran Khan</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 10 Years Experience<br>
-                    📍 Mehdipatnam<br>
-                    💰 <span class="price">₹550 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 21 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Abhishek Rao</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Kompally<br>
-                    💰 <span class="price">₹450 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 22 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Vikram Singh</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 Masab Tank<br>
-                    💰 <span class="price">₹520 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 23 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Ramesh Babu</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Chandanagar<br>
-                    💰 <span class="price">₹350 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 24 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Surya Prakash</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 11 Years Experience<br>
-                    📍 Banjara Hills<br>
-                    💰 <span class="price">₹650 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 25 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Lokesh Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Kukatpally<br>
-                    💰 <span class="price">₹400 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 26 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Shiva Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Attapur<br>
-                    💰 <span class="price">₹430 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 27 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Rohit Reddy</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Kondapur<br>
-                    💰 <span class="price">₹450 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 28 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Praveen Kumar</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 10 Years Experience<br>
-                    📍 Madhapur<br>
-                    💰 <span class="price">₹500 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 29 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Raghu Varma</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Miyapur<br>
-                    💰 <span class="price">₹370 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 30 -->
-
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">👨‍🔧</div>
-                    <div>
-                        <h3>Harish Reddy</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 12 Years Experience<br>
-                    📍 Gachibowli<br>
-                    💰 <span class="price">₹600 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
 
         </div>
 
+    </div>
 
-        <!-- BACK -->
-
-        <div class="back">
-
-            <a href="service.html">
-                ← Back to Services
-            </a>
-
-        </div>
-
-    </main>
-
-
-    <!-- FOOTER -->
 
     <footer>
 
-        <p>
-            © 2026 <strong>ServiceHub</strong>.
-            All Rights Reserved.
-        </p>
-
-        <p style="margin-top:10px;">
-            Trusted Local Services in Hyderabad
-        </p>
+        © 2026 <span>ServiceHub</span> |
+        Carpentry Services in Hyderabad
 
     </footer>
 
 
     <script>
 
-        function book(button) {
+        /*
+         * Publicly listed businesses/service providers.
+         *
+         * Phone numbers are included ONLY where a public source
+         * provides them. Do not invent or guess phone numbers.
+         */
 
-            const card = button.parentElement;
+        const providers = [
 
-            const message =
-                card.querySelector(".success-message");
+            {
+                name: "ServiceOnWheel",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪚"
+            },
 
-            if (button.classList.contains("booked")) {
-                return;
+            {
+                name: "ServiceOnWheel",
+                phone: "8087911222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🔨"
+            },
+
+            {
+                name: "LocalRamu Carpenter Service",
+                phone: "7676407640",
+                area: "Hyderabad",
+                rating: "4.29",
+                reviews: "1379 reviews",
+                icon: "🪵"
+            },
+
+            {
+                name: "ServingBee Carpenter Services",
+                phone: "7373732921",
+                area: "Hyderabad",
+                rating: "4.9",
+                reviews: "Service provider",
+                icon: "🧰"
+            },
+
+            {
+                name: "Sri Sai Wood Works",
+                phone: "9989891535",
+                area: "Mettuguda / Tarnaka / ECIL",
+                rating: "Public listing",
+                reviews: "Contact available",
+                icon: "🪚"
+            },
+
+            {
+                name: "Urban Company - Carpenters",
+                phone: "",
+                area: "Hyderabad",
+                rating: "Online booking",
+                reviews: "Home service",
+                icon: "🔨"
+            },
+
+            {
+                name: "NoBroker - Carpentry Services",
+                phone: "",
+                area: "Hyderabad",
+                rating: "Online booking",
+                reviews: "Home service",
+                icon: "🪵"
+            },
+
+            {
+                name: "HomeTriangle - Carpenters",
+                phone: "",
+                area: "Hyderabad",
+                rating: "Online booking",
+                reviews: "Home service",
+                icon: "🧰"
+            },
+
+            {
+                name: "RightCliq Carpenter Services",
+                phone: "",
+                area: "Hyderabad",
+                rating: "Online booking",
+                reviews: "Carpentry service",
+                icon: "🪚"
+            },
+
+            {
+                name: "TechSquadTeam Carpenters",
+                phone: "",
+                area: "Hyderabad",
+                rating: "Online enquiry",
+                reviews: "Carpentry service",
+                icon: "🔨"
+            },
+
+            {
+                name: "Apna Home Services",
+                phone: "8009449111",
+                area: "Hyderabad service listing",
+                rating: "Public listing",
+                reviews: "Carpentry services",
+                icon: "🪵"
+            },
+
+            {
+                name: "ServiceOnWheel - Furniture Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪑"
+            },
+
+            {
+                name: "ServiceOnWheel - Door Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🚪"
+            },
+
+            {
+                name: "ServiceOnWheel - Cupboard Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🗄️"
+            },
+
+            {
+                name: "ServiceOnWheel - Bed Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🛏️"
+            },
+
+            {
+                name: "ServiceOnWheel - Furniture Assembly",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪑"
+            },
+
+            {
+                name: "ServiceOnWheel - Window Service",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪟"
+            },
+
+            {
+                name: "ServiceOnWheel - Door Installation",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🚪"
+            },
+
+            {
+                name: "ServiceOnWheel - Kitchen Work",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🍽️"
+            },
+
+            {
+                name: "ServiceOnWheel - Cabinet Work",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🗄️"
+            },
+
+            {
+                name: "ServiceOnWheel - Shelf Installation",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "📚"
+            },
+
+            {
+                name: "ServiceOnWheel - Curtain Rod Installation",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪟"
+            },
+
+            {
+                name: "ServiceOnWheel - Hinge Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🔧"
+            },
+
+            {
+                name: "ServiceOnWheel - Drawer Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🗄️"
+            },
+
+            {
+                name: "ServiceOnWheel - Almirah Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🚪"
+            },
+
+            {
+                name: "ServiceOnWheel - Chair Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪑"
+            },
+
+            {
+                name: "ServiceOnWheel - Table Repair",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪵"
+            },
+
+            {
+                name: "ServiceOnWheel - Wooden Shelf",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "📚"
+            },
+
+            {
+                name: "ServiceOnWheel - Custom Woodwork",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🪚"
+            },
+
+            {
+                name: "ServiceOnWheel - Major Carpentry Work",
+                phone: "8237611222",
+                area: "Hyderabad",
+                rating: "4.8",
+                reviews: "15 ratings",
+                icon: "🔨"
             }
 
-            button.innerHTML = "✓ Booked";
-            button.classList.add("booked");
+        ];
 
-            message.style.display = "block";
+
+        const container = document.getElementById("providers");
+
+
+        function renderProviders() {
+
+            container.innerHTML = "";
+
+            providers.forEach((provider, index) => {
+
+                const phoneAvailable = provider.phone !== "";
+
+                const callButton = phoneAvailable
+
+                    ? `
+                        <a class="btn call"
+                           href="tel:+91${provider.phone}">
+                           📞 Call
+                        </a>
+                      `
+
+                    : `
+                        <button class="disabled"
+                                onclick="showContactMessage()">
+                            📞 Call
+                        </button>
+                      `;
+
+
+                const whatsappButton = phoneAvailable
+
+                    ? `
+                        <a class="btn whatsapp"
+                           href="https://wa.me/91${provider.phone}?text=${encodeURIComponent(
+                               "Hello, I found your carpentry service on ServiceHub. I would like to know more about your service."
+                           )}"
+                           target="_blank">
+                           💬 WhatsApp
+                        </a>
+                      `
+
+                    : `
+                        <button class="disabled"
+                                onclick="showContactMessage()">
+                            💬 WhatsApp
+                        </button>
+                      `;
+
+
+                container.innerHTML += `
+
+                    <div class="card">
+
+                        <div class="avatar">
+                            ${provider.icon}
+                        </div>
+
+                        <h2>${provider.name}</h2>
+
+                        <div class="service">
+                            🪚 Carpentry Services
+                        </div>
+
+                        <div class="area">
+                            📍 ${provider.area}
+                        </div>
+
+                        <div class="rating">
+                            ⭐ ${provider.rating}
+                            ${provider.reviews}
+                        </div>
+
+                        <div class="buttons">
+
+                            ${callButton}
+
+                            ${whatsappButton}
+
+                            <button
+                                class="book"
+                                onclick="bookProvider(${index})">
+                                🪚 Book Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                `;
+            });
+        }
+
+
+        renderProviders();
+
+
+        let selectedProvider = null;
+        let locationLink = "";
+
+
+        function bookProvider(index) {
+
+            selectedProvider = providers[index];
+
+            document.getElementById("selectedProviderText").innerHTML =
+                `You selected <strong>${selectedProvider.name}</strong>.
+                 Share your location with the service provider so they can
+                 understand where the carpentry work is required.`;
+
+            document.getElementById("locationModal").style.display = "flex";
+
+            showSuccess();
 
         }
 
-    </script>
 
+        function showSuccess() {
+
+            const message =
+                document.getElementById("successMessage");
+
+            message.style.display = "block";
+
+            setTimeout(() => {
+
+                message.style.display = "none";
+
+            }, 3500);
+
+        }
+
+
+        function closeModal() {
+
+            document.getElementById("locationModal").style.display = "none";
+
+        }
+
+
+        function getCurrentLocation() {
+
+            if (!navigator.geolocation) {
+
+                alert("Location services are not supported by this browser.");
+                return;
+
+            }
+
+
+            navigator.geolocation.getCurrentPosition(
+
+                function(position) {
+
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    locationLink =
+                        `https://www.google.com/maps?q=${lat},${lon}`;
+
+                    alert(
+                        "📍 Location detected successfully!\n\n" +
+                        "You can now share it using one of the options."
+                    );
+
+                },
+
+                function() {
+
+                    alert(
+                        "Unable to get your location. " +
+                        "Please allow location permission in your browser."
+                    );
+
+                }
+
+            );
+
+        }
+
+
+        async function shareLocation() {
+
+            if (!locationLink) {
+
+                await prepareLocation();
+
+            }
+
+            if (!locationLink) return;
+
+
+            if (navigator.share) {
+
+                try {
+
+                    await navigator.share({
+
+                        title: "ServiceHub Carpentry Booking",
+
+                        text:
+                            `I booked ${selectedProvider.name} ` +
+                            `through ServiceHub. Here is my location:`,
+
+                        url: locationLink
+
+                    });
+
+                } catch (error) {
+
+                    console.log("Share cancelled.");
+
+                }
+
+            } else {
+
+                alert(
+                    "Your browser does not support direct sharing. " +
+                    "Use WhatsApp or Copy Location Link."
+                );
+
+            }
+
+        }
+
+
+        async function prepareLocation() {
+
+            if (!navigator.geolocation) {
+
+                alert("Location is not supported.");
+                return;
+
+            }
+
+
+            return new Promise(resolve => {
+
+                navigator.geolocation.getCurrentPosition(
+
+                    position => {
+
+                        const lat =
+                            position.coords.latitude;
+
+                        const lon =
+                            position.coords.longitude;
+
+                        locationLink =
+                            `https://www.google.com/maps?q=${lat},${lon}`;
+
+                        resolve();
+
+                    },
+
+                    () => {
+
+                        alert(
+                            "Please allow location access to continue."
+                        );
+
+                        resolve();
+
+                    }
+
+                );
+
+            });
+
+        }
+
+
+        async function shareWhatsAppLocation() {
+
+            await prepareLocation();
+
+            if (!locationLink) return;
+
+
+            const message =
+                `Hello ${selectedProvider.name},%0A%0A` +
+
+                `I booked your carpentry service through ServiceHub.%0A%0A` +
+
+                `📍 My location:%0A${encodeURIComponent(locationLink)}`;
+
+
+            let phone = selectedProvider.phone;
+
+
+            if (phone) {
+
+                window.open(
+                    `https://wa.me/91${phone}?text=${message}`,
+                    "_blank"
+                );
+
+            } else {
+
+                window.open(
+                    `https://wa.me/?text=${message}`,
+                    "_blank"
+                );
+
+            }
+
+        }
+
+
+        async function copyLocation() {
+
+            await prepareLocation();
+
+            if (!locationLink) return;
+
+
+            try {
+
+                await navigator.clipboard.writeText(locationLink);
+
+                alert("📋 Location link copied successfully!");
+
+            } catch {
+
+                alert("Unable to copy location link.");
+
+            }
+
+        }
+
+
+        async function openGoogleMaps() {
+
+            await prepareLocation();
+
+            if (!locationLink) return;
+
+            window.open(locationLink, "_blank");
+
+        }
+
+
+        function showContactMessage() {
+
+            alert(
+                "This provider does not have a public phone number " +
+                "available in the listing. Please use the provider's " +
+                "official website/service platform to contact them."
+            );
+
+        }
+
+
+        window.addEventListener("click", function(event) {
+
+            const modal =
+                document.getElementById("locationModal");
+
+            if (event.target === modal) {
+
+                closeModal();
+
+            }
+
+        });
+
+    </script>
 
 </body>
 
 </html>
-```
