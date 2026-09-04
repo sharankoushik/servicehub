@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ServiceHub - House Cleaning</title>
-    <link rel="icon" type="image/png" href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+    <title>ServiceHub - House Cleaning Services Hyderabad</title>
+
+    <link rel="icon" type="image/png"
+        href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
 
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -31,7 +32,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.65);
+            background: rgba(0,0,0,0.68);
             z-index: -1;
         }
 
@@ -87,7 +88,7 @@
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: auto;
         }
 
@@ -98,7 +99,7 @@
         }
 
         .card {
-            background: rgba(255,255,255,0.97);
+            background: rgba(255,255,255,0.98);
             color: #222;
             padding: 23px;
             border-radius: 14px;
@@ -126,16 +127,23 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
+            flex-shrink: 0;
         }
 
         .profile h3 {
-            font-size: 19px;
+            font-size: 18px;
             margin-bottom: 5px;
+        }
+
+        .listed {
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: bold;
         }
 
         .verified {
             color: #16a34a;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
         }
 
@@ -150,21 +158,53 @@
             font-weight: bold;
         }
 
-        .price {
-            color: #111827;
+        .phone {
+            color: #2563eb;
             font-weight: bold;
+            text-decoration: none;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .call-btn,
+        .whatsapp-btn,
+        .book-btn {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .call-btn {
+            background: #374151;
+        }
+
+        .call-btn:hover {
+            background: #1f2937;
+        }
+
+        .whatsapp-btn {
+            background: #16a34a;
+        }
+
+        .whatsapp-btn:hover {
+            background: #15803d;
         }
 
         .book-btn {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
             background: #2563eb;
-            color: white;
             font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
         }
 
         .book-btn:hover {
@@ -184,6 +224,112 @@
             border-radius: 7px;
             text-align: center;
             font-weight: bold;
+        }
+
+        /* LOCATION MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            color: #222;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .modal-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 14px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .provider-selected {
+            background: #eff6ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #1d4ed8;
+            font-weight: bold;
+        }
+
+        .location-status {
+            padding: 12px;
+            border-radius: 8px;
+            background: #f3f4f6;
+            margin-bottom: 15px;
+            color: #374151;
+            word-break: break-word;
+        }
+
+        .modal-buttons {
+            display: grid;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .get-location {
+            background: #2563eb;
+            color: white;
+        }
+
+        .share-btn {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .whatsapp-location {
+            background: #16a34a;
+            color: white;
+        }
+
+        .copy-btn {
+            background: #374151;
+            color: white;
+        }
+
+        .maps-btn {
+            background: #f59e0b;
+            color: #111827;
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
         }
 
         .back {
@@ -229,761 +375,767 @@
                 font-size: 30px;
             }
 
+            .actions {
+                grid-template-columns: 1fr;
+            }
         }
-
     </style>
 
 </head>
 
 <body>
 
-    <header>
-        <h1>🧹 SERVICEHUB</h1>
-        <p>All Home Services At One Stop</p>
-    </header>
+<header>
+
+    <h1>🧹 SERVICEHUB</h1>
+
+    <p>All Home Services At One Stop</p>
+
+</header>
 
 
-    <section class="hero">
+<section class="hero">
 
-        <h2>🧹 House Cleaning in Hyderabad</h2>
+    <h2>🧹 House Cleaning Services in Hyderabad</h2>
 
-        <p>
-            Find trusted house cleaning service providers near you
-        </p>
+    <p>
+        Find house cleaning service providers and contact them directly
+    </p>
 
-    </section>
+</section>
 
 
-    <div class="location">
+<div class="location">
 
-        📍 Location:
-        <strong>Hyderabad, Telangana</strong>
+    📍 Location:
+    <strong>Hyderabad, Telangana</strong>
 
-        &nbsp; | &nbsp;
+    &nbsp; | &nbsp;
 
-        🧹 Service:
-        <strong>House Cleaning</strong>
+    🧹 Service:
+    <strong>House Cleaning Services</strong>
+
+</div>
+
+
+<main class="container">
+
+    <div class="providers" id="providers"></div>
+
+    <div class="back">
+
+        <a href="service.html">
+            ← Back to Services
+        </a>
 
     </div>
 
+</main>
 
-    <main class="container">
 
-        <div class="providers">
+<!-- LOCATION MODAL -->
 
+<div class="modal" id="locationModal">
 
-            <!-- 1 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>CleanPro Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
+    <div class="modal-content">
 
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Kukatpally<br>
-                    💰 <span class="price">₹799 onwards</span>
-                </div>
+        <span class="close" onclick="closeLocationModal()">×</span>
 
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 2 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>Fresh Home Cleaners</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Madhapur<br>
-                    💰 <span class="price">₹899 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 3 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Shine House Care</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Gachibowli<br>
-                    💰 <span class="price">₹999 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 4 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧼</div>
-                    <div>
-                        <h3>Bright Home Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 Banjara Hills<br>
-                    💰 <span class="price">₹1,199 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 5 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Easy Clean Hyderabad</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Ameerpet<br>
-                    💰 <span class="price">₹699 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 6 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>HomeGlow Cleaners</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 10 Years Experience<br>
-                    📍 Kondapur<br>
-                    💰 <span class="price">₹1,099 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 7 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Happy Home Cleaning</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Miyapur<br>
-                    💰 <span class="price">₹749 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 8 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧼</div>
-                    <div>
-                        <h3>Quick Clean Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Secunderabad<br>
-                    💰 <span class="price">₹899 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 9 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Metro Home Cleaners</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Manikonda<br>
-                    💰 <span class="price">₹799 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 10 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>Elite Home Cleaning</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 11 Years Experience<br>
-                    📍 Jubilee Hills<br>
-                    💰 <span class="price">₹1,499 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 11 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Manoj Cleaning Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Begumpet<br>
-                    💰 <span class="price">₹749 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 12 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧼</div>
-                    <div>
-                        <h3>Star Home Care</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 LB Nagar<br>
-                    💰 <span class="price">₹899 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 13 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Super Shine Cleaners</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Dilsukhnagar<br>
-                    💰 <span class="price">₹699 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 14 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>Prime Cleaning Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 10 Years Experience<br>
-                    📍 Himayatnagar<br>
-                    💰 <span class="price">₹1,099 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 15 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Quick Home Care</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Tarnaka<br>
-                    💰 <span class="price">₹649 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 16 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧼</div>
-                    <div>
-                        <h3>Venu Home Cleaners</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Alwal<br>
-                    💰 <span class="price">₹799 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 17 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Hari Cleaning Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Uppal<br>
-                    💰 <span class="price">₹749 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 18 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>Ravi Home Care</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 Nallagandla<br>
-                    💰 <span class="price">₹899 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 19 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>City Clean Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Tolichowki<br>
-                    💰 <span class="price">₹699 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 20 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧼</div>
-                    <div>
-                        <h3>Royal Home Cleaners</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 10 Years Experience<br>
-                    📍 Mehdipatnam<br>
-                    💰 <span class="price">₹999 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 21 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Fast Clean Hyderabad</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Kompally<br>
-                    💰 <span class="price">₹799 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 22 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>Vikram Home Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Masab Tank<br>
-                    💰 <span class="price">₹899 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 23 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>FreshPack Cleaning</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Chandanagar<br>
-                    💰 <span class="price">₹749 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 24 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧼</div>
-                    <div>
-                        <h3>Elite Clean Hyderabad</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 11 Years Experience<br>
-                    📍 Banjara Hills<br>
-                    💰 <span class="price">₹1,299 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 25 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Lokesh Cleaning Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 7 Years Experience<br>
-                    📍 Kukatpally<br>
-                    💰 <span class="price">₹799 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 26 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>Shiva Home Cleaning</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 9 Years Experience<br>
-                    📍 Attapur<br>
-                    💰 <span class="price">₹899 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 27 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Rohit Cleaners</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.7</span> / 5<br>
-                    🕒 6 Years Experience<br>
-                    📍 Kondapur<br>
-                    💰 <span class="price">₹749 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 28 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧼</div>
-                    <div>
-                        <h3>Praveen Home Care</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.8</span> / 5<br>
-                    🕒 8 Years Experience<br>
-                    📍 Madhapur<br>
-                    💰 <span class="price">₹999 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 29 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧹</div>
-                    <div>
-                        <h3>Raghu Cleaning Services</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.6</span> / 5<br>
-                    🕒 5 Years Experience<br>
-                    📍 Miyapur<br>
-                    💰 <span class="price">₹699 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-            <!-- 30 -->
-            <div class="card">
-                <div class="profile">
-                    <div class="avatar">🧽</div>
-                    <div>
-                        <h3>Harish House Cleaning</h3>
-                        <span class="verified">✔ Verified Provider</span>
-                    </div>
-                </div>
-
-                <div class="details">
-                    ⭐ <span class="rating">4.9</span> / 5<br>
-                    🕒 10 Years Experience<br>
-                    📍 Gachibowli<br>
-                    💰 <span class="price">₹1,199 onwards</span>
-                </div>
-
-                <button class="book-btn" onclick="book(this)">Book Now</button>
-                <div class="success-message">✅ Successfully Booked!</div>
-            </div>
-
-
-        </div>
-
-
-        <div class="back">
-
-            <a href="service.html">
-                ← Back to Services
-            </a>
-
-        </div>
-
-    </main>
-
-
-    <footer>
+        <h2>📍 Share Your Location</h2>
 
         <p>
-            © 2026 <strong>ServiceHub</strong>.
-            All Rights Reserved.
+            Share your location with the selected cleaning service
+            provider so they can find your service address.
         </p>
 
-        <p style="margin-top:10px;">
-            Trusted House Cleaning Services in Hyderabad
-        </p>
+        <div class="provider-selected" id="selectedProvider">
+            Provider
+        </div>
 
-    </footer>
+        <div class="location-status" id="locationStatus">
+            📍 Your location has not been detected yet.
+        </div>
+
+        <div class="modal-buttons">
+
+            <button
+                class="modal-btn get-location"
+                onclick="getLocation()">
+                📍 Get My Current Location
+            </button>
+
+            <button
+                class="modal-btn share-btn disabled"
+                id="shareButton"
+                onclick="shareLocation()">
+                📤 Share Location
+            </button>
+
+            <button
+                class="modal-btn whatsapp-location disabled"
+                id="whatsappLocationButton"
+                onclick="shareOnWhatsApp()">
+                💬 Share on WhatsApp
+            </button>
+
+            <button
+                class="modal-btn copy-btn disabled"
+                id="copyButton"
+                onclick="copyLocation()">
+                📋 Copy Location Link
+            </button>
+
+            <button
+                class="modal-btn maps-btn disabled"
+                id="mapsButton"
+                onclick="openMaps()">
+                🗺️ Open Location in Google Maps
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 
-    <script>
+<footer>
 
-        function book(button) {
+    <p>
+        © 2026 <strong>ServiceHub</strong>.
+        All Rights Reserved.
+    </p>
 
-            const card = button.parentElement;
+    <p style="margin-top:10px;">
+        House Cleaning Services in Hyderabad
+    </p>
 
-            const message =
-                card.querySelector(".success-message");
+</footer>
 
-            if (button.classList.contains("booked")) {
-                return;
+
+<script>
+
+/*
+=========================================================
+PUBLICLY LISTED HYDERABAD CLEANING SERVICES
+=========================================================
+
+Phone numbers are included only where publicly listed
+by the service provider or its public service page.
+Information can change, so recheck before production use.
+*/
+
+const providers = [
+
+    {
+        name: "Vijay Home Services",
+        phone: "8453748478",
+        area: "Hyderabad",
+        rating: "4.9",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🧹"
+    },
+
+    {
+        name: "Alpha Cleaning Services",
+        phone: "7483112375",
+        area: "Malkajgiri / Anandbagh",
+        rating: "—",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🏠"
+    },
+
+    {
+        name: "LocalRamu Deep Cleaning Services",
+        phone: "767407640",
+        area: "Hyderabad",
+        rating: "4.51",
+        reviews: "1717",
+        verified: true,
+        avatar: "✨"
+    },
+
+    {
+        name: "Maid for Home",
+        phone: "7569356918",
+        area: "Hyderabad",
+        rating: "—",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🧽"
+    },
+
+    {
+        name: "TechSquadTeam Cleaning Services",
+        phone: "",
+        area: "Hyderabad",
+        rating: "4.9",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🧼"
+    }
+
+];
+
+
+const providersContainer =
+    document.getElementById("providers");
+
+
+/*
+=========================================================
+DISPLAY PROVIDERS
+=========================================================
+*/
+
+providers.forEach((provider, index) => {
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    const verifiedText = provider.verified
+        ? `<span class="verified">✔ Public Business Information</span>`
+        : `<span class="listed">● Public Business Listing</span>`;
+
+    const phoneHTML = provider.phone
+        ? `
+            📞
+            <a
+                class="phone"
+                href="tel:+91${provider.phone}">
+                +91 ${provider.phone}
+            </a>
+        `
+        : `
+            📞 Contact provider through their official service page
+        `;
+
+    const callButton = provider.phone
+        ? `
+            <a
+                class="call-btn"
+                href="tel:+91${provider.phone}">
+                📞 Call
+            </a>
+        `
+        : `
+            <button
+                class="call-btn"
+                onclick="alert('Phone number is not publicly listed here. Please use the provider website to contact them.')">
+                📞 Contact
+            </button>
+        `;
+
+    const whatsappButton = provider.phone
+        ? `
+            <a
+                class="whatsapp-btn"
+                href="https://wa.me/91${provider.phone}"
+                target="_blank">
+                💬 WhatsApp
+            </a>
+        `
+        : `
+            <button
+                class="whatsapp-btn"
+                onclick="alert('WhatsApp number is not publicly listed here.')">
+                💬 WhatsApp
+            </button>
+        `;
+
+    card.innerHTML = `
+
+        <div class="profile">
+
+            <div class="avatar">
+                ${provider.avatar}
+            </div>
+
+            <div>
+
+                <h3>${provider.name}</h3>
+
+                ${verifiedText}
+
+            </div>
+
+        </div>
+
+
+        <div class="details">
+
+            ⭐
+            <span class="rating">
+                ${provider.rating}
+            </span>
+
+            ${provider.reviews !== "Publicly listed"
+                ? `/ 5 (${provider.reviews} reviews)`
+                : ""}
+
+            <br>
+
+            📍 ${provider.area}
+
+            <br>
+
+            ${phoneHTML}
+
+            <br>
+
+            🧹 House cleaning, deep cleaning,
+            kitchen & bathroom cleaning
+
+        </div>
+
+
+        <div class="actions">
+
+            ${callButton}
+
+            ${whatsappButton}
+
+        </div>
+
+
+        <button
+            class="book-btn"
+            onclick="bookProvider(${index}, this)">
+            📅 Book Now
+        </button>
+
+
+        <div class="success-message">
+            ✅ Booking request started!
+        </div>
+
+    `;
+
+    providersContainer.appendChild(card);
+
+});
+
+
+/*
+=========================================================
+BOOKING
+=========================================================
+*/
+
+let selectedProvider = null;
+let currentLocationLink = "";
+
+
+function bookProvider(index, button) {
+
+    selectedProvider = providers[index];
+
+    document.getElementById("selectedProvider").innerHTML =
+        `🧹 Booking with: ${selectedProvider.name}
+         <br>
+         ${selectedProvider.phone
+            ? `📞 +91 ${selectedProvider.phone}`
+            : `📞 Phone number not publicly listed here`
+         }`;
+
+    document.getElementById("locationStatus").innerHTML =
+        "📍 Your location has not been detected yet.";
+
+    currentLocationLink = "";
+
+    disableLocationButtons();
+
+    document.getElementById("locationModal").style.display = "flex";
+
+    button.innerHTML = "✓ Booking Started";
+
+    button.classList.add("booked");
+
+    const message =
+        button.parentElement.querySelector(".success-message");
+
+    message.style.display = "block";
+
+}
+
+
+/*
+=========================================================
+CLOSE MODAL
+=========================================================
+*/
+
+function closeLocationModal() {
+
+    document.getElementById("locationModal").style.display = "none";
+
+}
+
+
+/*
+=========================================================
+GET USER LOCATION
+=========================================================
+*/
+
+function getLocation() {
+
+    const status =
+        document.getElementById("locationStatus");
+
+    if (!navigator.geolocation) {
+
+        status.innerHTML =
+            "❌ Location services are not supported by this browser.";
+
+        return;
+
+    }
+
+    status.innerHTML =
+        "⏳ Getting your current location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude =
+                position.coords.latitude;
+
+            const longitude =
+                position.coords.longitude;
+
+
+            currentLocationLink =
+                `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+
+            status.innerHTML = `
+
+                ✅ Location detected!
+
+                <br><br>
+
+                Latitude:
+                ${latitude.toFixed(6)}
+
+                <br>
+
+                Longitude:
+                ${longitude.toFixed(6)}
+
+            `;
+
+            enableLocationButtons();
+
+        },
+
+
+        function(error) {
+
+            if (error.code === 1) {
+
+                status.innerHTML =
+                    "❌ Location permission was denied. Please allow location access in your browser.";
+
             }
 
-            button.innerHTML = "✓ Booked";
+            else if (error.code === 2) {
 
-            button.classList.add("booked");
+                status.innerHTML =
+                    "❌ Your location could not be determined.";
 
-            message.style.display = "block";
+            }
+
+            else {
+
+                status.innerHTML =
+                    "❌ Unable to get your location. Please try again.";
+
+            }
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+
+    );
+
+}
+
+
+/*
+=========================================================
+ENABLE LOCATION BUTTONS
+=========================================================
+*/
+
+function enableLocationButtons() {
+
+    document
+        .getElementById("shareButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("whatsappLocationButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("copyButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("mapsButton")
+        .classList.remove("disabled");
+
+}
+
+
+/*
+=========================================================
+DISABLE LOCATION BUTTONS
+=========================================================
+*/
+
+function disableLocationButtons() {
+
+    document
+        .getElementById("shareButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("whatsappLocationButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("copyButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("mapsButton")
+        .classList.add("disabled");
+
+}
+
+
+/*
+=========================================================
+BROWSER SHARE
+=========================================================
+*/
+
+async function shareLocation() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    const message =
+        `Hello ${selectedProvider.name},
+
+I have booked your house cleaning service through ServiceHub.
+
+📍 My service location:
+${currentLocationLink}
+
+Please use this location to reach me.`;
+
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share({
+
+                title: "ServiceHub Cleaning Booking",
+
+                text: message,
+
+                url: currentLocationLink
+
+            });
 
         }
 
-    </script>
+        catch (error) {
+
+            console.log("Share cancelled.");
+
+        }
+
+    }
+
+    else {
+
+        await copyLocation();
+
+        alert(
+            "Your browser does not support direct sharing. The location link has been copied."
+        );
+
+    }
+
+}
+
+
+/*
+=========================================================
+WHATSAPP
+=========================================================
+*/
+
+function shareOnWhatsApp() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    if (!selectedProvider.phone) {
+
+        alert(
+            "A WhatsApp number for this provider is not publicly listed here."
+        );
+
+        return;
+
+    }
+
+
+    const message =
+        `Hello ${selectedProvider.name},
+
+I booked your house cleaning service through ServiceHub.
+
+📍 My service location:
+${currentLocationLink}
+
+Please use this location to reach me.
+
+Thank you.`;
+
+
+    const whatsappURL =
+        "https://wa.me/91" +
+        selectedProvider.phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/*
+=========================================================
+COPY LOCATION
+=========================================================
+*/
+
+async function copyLocation() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            currentLocationLink
+        );
+
+        alert(
+            "📋 Location link copied successfully!"
+        );
+
+    }
+
+    catch (error) {
+
+        alert(
+            "Unable to copy automatically."
+        );
+
+    }
+
+}
+
+
+/*
+=========================================================
+OPEN GOOGLE MAPS
+=========================================================
+*/
+
+function openMaps() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    window.open(
+        currentLocationLink,
+        "_blank"
+    );
+
+}
+
+
+/*
+=========================================================
+CLICK OUTSIDE MODAL TO CLOSE
+=========================================================
+*/
+
+window.addEventListener(
+    "click",
+    function(event) {
+
+        const modal =
+            document.getElementById("locationModal");
+
+        if (event.target === modal) {
+
+            closeLocationModal();
+
+        }
+
+    }
+);
+
+</script>
 
 </body>
 
 </html>
-```
+
