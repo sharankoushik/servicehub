@@ -7,9 +7,11 @@
 
     <title>ServiceHub - Vehicle Washing Services Hyderabad</title>
 
-    <link rel="icon" type="image/png" href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+    <link rel="icon" type="image/png"
+        href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,7 +21,8 @@
 
         body {
             min-height: 100vh;
-            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            background-image:
+                url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -30,12 +33,12 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.68);
+            background: rgba(0,0,0,0.68);
             z-index: -1;
         }
 
         header {
-            background: rgba(17, 24, 39, 0.97);
+            background: rgba(17,24,39,0.97);
             padding: 20px 7%;
             display: flex;
             justify-content: space-between;
@@ -73,7 +76,7 @@
             width: 90%;
             max-width: 1100px;
             margin: auto;
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255,255,255,0.96);
             color: #222;
             padding: 17px 25px;
             border-radius: 10px;
@@ -92,16 +95,17 @@
 
         .providers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
             gap: 22px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255,255,255,0.98);
             color: #222;
             padding: 23px;
             border-radius: 14px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             transition: 0.3s;
         }
 
@@ -231,13 +235,13 @@
             font-weight: bold;
         }
 
-        /* LOCATION MODAL */
+        /* MODAL */
 
         .modal {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0,0,0,0.75);
             z-index: 100;
             align-items: center;
             justify-content: center;
@@ -252,7 +256,7 @@
             padding: 28px;
             border-radius: 14px;
             position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
         .close {
@@ -352,7 +356,7 @@
         }
 
         footer {
-            background: rgba(17, 24, 39, 0.97);
+            background: rgba(17,24,39,0.97);
             text-align: center;
             padding: 25px;
             color: #d1d5db;
@@ -360,6 +364,7 @@
         }
 
         @media(max-width:600px) {
+
             header {
                 flex-direction: column;
                 gap: 8px;
@@ -377,98 +382,172 @@
             .actions {
                 grid-template-columns: 1fr;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <header>
+
     <h1>⚡ SERVICEHUB</h1>
-    <p>All Home & Vehicle Services At One Stop</p>
+
+    <p>
+        All Home & Vehicle Services At One Stop
+    </p>
+
 </header>
 
+
 <section class="hero">
-    <h2>🚗 Vehicle Washing Services in Hyderabad</h2>
-    <p>Find vehicle washing, car wash, bike wash and detailing services near you</p>
+
+    <h2>
+        🚗 Vehicle Washing Services in Hyderabad
+    </h2>
+
+    <p>
+        Find vehicle washing, car wash, bike wash
+        and detailing services near you
+    </p>
+
 </section>
 
+
 <div class="location">
+
     📍 Location:
     <strong>Hyderabad, Telangana</strong>
+
     &nbsp; | &nbsp;
+
     🚗 Service:
     <strong>Vehicle Washing</strong>
+
 </div>
+
 
 <main class="container">
 
-    <div class="providers" id="providers"></div>
+    <div
+        class="providers"
+        id="providers">
+    </div>
+
 
     <div class="back">
-        <a href="service.html">← Back to Services</a>
+
+        <a href="service.html">
+            ← Back to Services
+        </a>
+
     </div>
 
 </main>
 
+
 <!-- LOCATION MODAL -->
 
-<div class="modal" id="locationModal">
+<div
+    class="modal"
+    id="locationModal">
 
     <div class="modal-content">
 
-        <span class="close" onclick="closeLocationModal()">×</span>
+        <span
+            class="close"
+            onclick="closeLocationModal()">
+            ×
+        </span>
 
-        <h2>📍 Share Your Location</h2>
+
+        <h2>
+            📍 Share Your Location
+        </h2>
+
 
         <p>
-            Share your location with the selected vehicle washing
-            provider so they can reach your vehicle.
+
+            Share your location with the selected
+            vehicle washing provider so they can
+            reach your vehicle.
+
         </p>
 
-        <div class="provider-selected" id="selectedProvider">
+
+        <div
+            class="provider-selected"
+            id="selectedProvider">
+
             Provider
+
         </div>
 
-        <div class="location-status" id="locationStatus">
+
+        <div
+            class="location-status"
+            id="locationStatus">
+
             📍 Your location has not been detected yet.
+
         </div>
+
 
         <div class="modal-buttons">
+
 
             <button
                 class="modal-btn get-location"
                 onclick="getLocation()">
+
                 📍 Get My Current Location
+
             </button>
+
 
             <button
                 class="modal-btn share-btn disabled"
                 id="shareButton"
                 onclick="shareLocation()">
+
                 📤 Share Location
+
             </button>
+
 
             <button
                 class="modal-btn whatsapp-location disabled"
                 id="whatsappLocationButton"
                 onclick="shareOnWhatsApp()">
+
                 💬 Share on WhatsApp
+
             </button>
+
 
             <button
                 class="modal-btn copy-btn disabled"
                 id="copyButton"
                 onclick="copyLocation()">
+
                 📋 Copy Location Link
+
             </button>
+
 
             <button
                 class="modal-btn maps-btn disabled"
                 id="mapsButton"
                 onclick="openMaps()">
+
                 🗺️ Open Location in Google Maps
+
             </button>
+
 
         </div>
 
@@ -476,18 +555,28 @@
 
 </div>
 
+
 <footer>
-    <p>© 2026 <strong>ServiceHub</strong>. All Rights Reserved.</p>
-    <p style="margin-top:10px;">
-        Vehicle Washing Services in Hyderabad
+
+    <p>
+        © 2026 <strong>ServiceHub</strong>.
+        All Rights Reserved.
     </p>
+
+    <p style="margin-top:10px;">
+
+        Vehicle Washing Services in Hyderabad
+
+    </p>
+
 </footer>
 
 
 <script>
 
+
 /* =====================================================
-   VEHICLE WASHING PROVIDERS
+   VEHICLE WASHING PROVIDERS - HYDERABAD
    ===================================================== */
 
 const providers = [
@@ -665,7 +754,7 @@ const providers = [
 
     {
         name: "RKS Motors",
-        phone: "",
+        phone: "9010811192",
         area: "Malakpet",
         rating: "4.3",
         reviews: "50+",
@@ -674,7 +763,7 @@ const providers = [
 
     {
         name: "Neon Hyundai",
-        phone: "",
+        phone: "7337442559",
         area: "Begumpet",
         rating: "4.4",
         reviews: "100+",
@@ -755,7 +844,7 @@ const providers = [
 
     {
         name: "Amigo Auto Spa",
-        phone: "",
+        phone: "9553454647",
         area: "Madhapur",
         rating: "4.8",
         reviews: "100+",
@@ -770,66 +859,15 @@ const providersContainer =
 
 
 /* =====================================================
-   DISPLAY PROVIDERS
+   DISPLAY ALL PROVIDERS
    ===================================================== */
 
 providers.forEach((provider, index) => {
 
-    const card = document.createElement("div");
+    const card =
+        document.createElement("div");
 
     card.className = "card";
-
-    let phoneHTML = "";
-    let buttonsHTML = "";
-
-    if (provider.phone) {
-
-        phoneHTML = `
-            📞
-            <a
-                class="phone"
-                href="tel:+91${provider.phone}">
-                +91 ${provider.phone}
-            </a>
-        `;
-
-        buttonsHTML = `
-            <a
-                class="call-btn"
-                href="tel:+91${provider.phone}">
-                📞 Call
-            </a>
-
-            <a
-                class="whatsapp-btn"
-                href="https://wa.me/91${provider.phone}"
-                target="_blank"
-                rel="noopener">
-                💬 WhatsApp
-            </a>
-        `;
-
-    } else {
-
-        phoneHTML = `
-            📞 Phone number not publicly displayed
-        `;
-
-        buttonsHTML = `
-            <a
-                class="call-btn disabled"
-                href="#">
-                📞 Call
-            </a>
-
-            <a
-                class="whatsapp-btn disabled"
-                href="#">
-                💬 WhatsApp
-            </a>
-        `;
-
-    }
 
 
     card.innerHTML = `
@@ -858,6 +896,7 @@ providers.forEach((provider, index) => {
         <div class="details">
 
             ⭐
+
             <span class="rating">
                 ${provider.rating}
             </span>
@@ -872,7 +911,15 @@ providers.forEach((provider, index) => {
 
             <br>
 
-            ${phoneHTML}
+            📞
+
+            <a
+                class="phone"
+                href="tel:+91${provider.phone}">
+
+                +91 ${provider.phone}
+
+            </a>
 
             <br>
 
@@ -884,7 +931,24 @@ providers.forEach((provider, index) => {
 
         <div class="actions">
 
-            ${buttonsHTML}
+            <a
+                class="call-btn"
+                href="tel:+91${provider.phone}">
+
+                📞 Call
+
+            </a>
+
+
+            <a
+                class="whatsapp-btn"
+                href="https://wa.me/91${provider.phone}"
+                target="_blank"
+                rel="noopener">
+
+                💬 WhatsApp
+
+            </a>
 
         </div>
 
@@ -923,24 +987,27 @@ let currentLocationLink = "";
 
 function bookProvider(index, button) {
 
-    selectedProvider = providers[index];
+    selectedProvider =
+        providers[index];
 
 
-    document.getElementById("selectedProvider").innerHTML =
+    document
+        .getElementById("selectedProvider")
+        .innerHTML =
 
         `🚗 Booking with:
         ${selectedProvider.name}
 
         <br>
 
-        📞 ${
-            selectedProvider.phone
-            ? "+91 " + selectedProvider.phone
-            : "Phone number not publicly displayed"
-        }`;
+        📞 +91
+        ${selectedProvider.phone}`;
 
 
-    document.getElementById("locationStatus").innerHTML =
+    document
+        .getElementById("locationStatus")
+        .innerHTML =
+
         "📍 Your location has not been detected yet.";
 
 
@@ -950,15 +1017,20 @@ function bookProvider(index, button) {
     disableLocationButtons();
 
 
-    document.getElementById("locationModal").style.display = "flex";
+    document
+        .getElementById("locationModal")
+        .style.display = "flex";
 
 
-    button.innerHTML = "✓ Booking Started";
+    button.innerHTML =
+        "✓ Booking Started";
+
 
     button.classList.add("booked");
 
 
-    button.parentElement
+    button
+        .parentElement
         .querySelector(".success-message")
         .style.display = "block";
 
@@ -971,14 +1043,15 @@ function bookProvider(index, button) {
 
 function closeLocationModal() {
 
-    document.getElementById("locationModal").style.display =
-        "none";
+    document
+        .getElementById("locationModal")
+        .style.display = "none";
 
 }
 
 
 /* =====================================================
-   GET USER LOCATION
+   GET CURRENT LOCATION
    ===================================================== */
 
 function getLocation() {
@@ -1179,9 +1252,11 @@ Please use this location to reach me.`;
 
         }
 
-        catch (error) {
+        catch(error) {
 
-            console.log("Share cancelled.");
+            console.log(
+                "Share cancelled."
+            );
 
         }
 
@@ -1201,7 +1276,7 @@ Please use this location to reach me.`;
 
 
 /* =====================================================
-   WHATSAPP LOCATION
+   SHARE LOCATION THROUGH WHATSAPP
    ===================================================== */
 
 function shareOnWhatsApp() {
@@ -1210,17 +1285,6 @@ function shareOnWhatsApp() {
 
         alert(
             "Please get your current location first."
-        );
-
-        return;
-
-    }
-
-
-    if (!selectedProvider.phone) {
-
-        alert(
-            "This provider does not have a publicly displayed phone number."
         );
 
         return;
@@ -1259,7 +1323,7 @@ Thank you.`;
 
 
 /* =====================================================
-   COPY LOCATION
+   COPY LOCATION LINK
    ===================================================== */
 
 async function copyLocation() {
@@ -1281,13 +1345,14 @@ async function copyLocation() {
             currentLocationLink
         );
 
+
         alert(
             "📋 Location link copied successfully!"
         );
 
     }
 
-    catch (error) {
+    catch(error) {
 
         alert(
             "Unable to copy automatically."
@@ -1347,4 +1412,5 @@ window.addEventListener(
 </script>
 
 </body>
+
 </html>
